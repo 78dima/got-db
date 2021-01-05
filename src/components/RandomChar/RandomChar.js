@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types';
 import gotService from '../../services/gotService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import PropTypes from 'prop-types';
+import './RandomChar.sass';
 
 const service = new gotService();
 
@@ -30,10 +31,11 @@ export default function RandomChar({interval}){
 		setChar(char);
 		setLoading(false);
 	}
+
 	function onError(){
 		setError(true);
 		setLoading(false);
-	};
+	}
 
 	const errorMessage = error ? <ErrorMessage/> : null;
 	const spinner = loading ? <Spinner/> : null;

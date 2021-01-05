@@ -1,0 +1,29 @@
+.header
+  background: rgba(0, 60, 60, 0.63)
+  &-wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 15px 0
+  &-list
+    display: flex
+    li
+      list-style: none
+      &:not(:last-child)
+        margin-right: 10px
+  &-link
+    color: white
+    text-transform: uppercase
+    text-decoration: none
+    &:hover, &:focus
+      text-decoration: none
+      color: #11ccc3
+  &-logo-link
+    color: white
+    text-transform: uppercase
+    text-decoration: none
+    &:hover, &:focus
+      text-decoration: none
+      color: #11ccc3
+.active-link
+  color: #11ccc3

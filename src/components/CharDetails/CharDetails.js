@@ -1,4 +1,5 @@
-import React, { useState, useMemo, useCallback, useEffect} from 'react'
+import React, { useState, useCallback, useEffect} from 'react';
+import './CharDetails.sass';
 const Field = (props)=>{
 	const {field, data,label} = props;
 	return(
@@ -66,7 +67,7 @@ export {
 // 	}
 // }
 
-export default function CharDetails({charId, getData, children}, props) {
+export default function CharDetails({charId, getData, children}) {
 	const [char, setChar] = useState(null);
 	const fetchData = useCallback(()=>{
 		if(!charId){
@@ -86,7 +87,7 @@ export default function CharDetails({charId, getData, children}, props) {
 	useEffect(()=>{
 		fetchData();
 		console.log('fetching');
-	},[charId]);
+	},[fetchData, charId]);
 
 
 	if(!char){

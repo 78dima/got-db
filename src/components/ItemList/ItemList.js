@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from 'react'
-import Spiner from '../spinner/Spinner';
 import PropTypes from 'prop-types';
+import Spinner from '../spinner/Spinner';
+import './ItemList.sass';
+
 
 // export default class ItemList extends Component {
 // 	state = {
@@ -76,7 +78,7 @@ export default function ItemList({getData, renderItem, onItemSelected}){
 	}
 
 	if(!data){
-		return <Spiner/>
+		return <Spinner/>
 	}
 
 	const items = renderItems(data);

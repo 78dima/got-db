@@ -1,24 +1,30 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
+import {Container} from "reactstrap";
+import './Header.sass';
 export default function Header() {
 	return (
 		<div className="header">
-			<h3 className="header-title">
-			<Link to="/">
-					GOT DB
-				</Link>
-			</h3>
-			<ul className="header-list">
-				<li>
-					<Link to="/characters/">Characters</Link>
-				</li>
-				<li>
-					<Link to="/houses/">Houses</Link>
-				</li>
-				<li>
-					<Link to="/books/">Books</Link>
-				</li>
-			</ul>
+			<Container>
+				<div className="header-wrapper">
+					<h3 className="header-title">
+					<NavLink className={'header-logo-link'} to="/">
+							Game of Thrones Database
+						</NavLink >
+					</h3>
+					<ul className="header-list">
+						<li>
+							<NavLink className={'header-link'} activeClassName="active-link" to="/characters/">Characters</NavLink >
+						</li>
+						<li>
+							<NavLink className={'header-link'} activeClassName="active-link" to="/houses/">Houses</NavLink >
+						</li>
+						<li>
+							<NavLink className={'header-link'} activeClassName="active-link" to="/books/">Books</NavLink >
+						</li>
+					</ul>
+				</div>
+			</Container>
 		</div>
 	)
 }
